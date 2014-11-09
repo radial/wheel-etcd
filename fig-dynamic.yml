@@ -1,0 +1,19 @@
+logs:
+  image: "radial/axle-base:latest"
+  volumes:
+    - /log
+hub:
+  image: "radial/hub-base:latest"
+  volumes_from:
+    - logs
+  volumes:
+    - /config
+    - /data
+    - /run
+etcd:
+  image: "radial/etcd:latest"
+  volumes_from:
+    - hub
+  ports:
+    - "4001:4001"
+    - "7001:7001"
