@@ -33,6 +33,7 @@ displaying default values specific to Radial.
     snapshots and log files
   - **$ETCD_CONFIG**: [_"/config/etcd.conf"_] Location of the configuration
     file.
+  - **$ETCD_NAME**: [_container_id_] Name for this etcd node.
 
 ## Radial
 

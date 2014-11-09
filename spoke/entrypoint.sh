@@ -2,8 +2,12 @@
 set -e
 
 # Tunable settings
-ETCD_DATA_DIR=${ETCD_DATA_DIR:-/data/backup}
-ETCD_CONFIG=${ETCD_CONFIG:-/config/etcd.conf}
+export ETCD_DATA_DIR=${ETCD_DATA_DIR:-/data/backup}
+export ETCD_CONFIG=${ETCD_CONFIG:-/config/etcd.conf}
+export ETCD_NAME=${ETCD_NAME:-${HOSTNAME}}
+
+# Misc settings
+ERR_LOG=/log/$HOSTNAME/etcd_stderr.log
 
 restart_message() {
     echo "Container restart on $(date)."
