@@ -31,8 +31,6 @@ displaying default values specific to Radial.
     instead of environment variables or configuration for the etcd binary.
   - **$ETCD_DATA_DIR**: [_"/data/backup"_] Location to store etcd backup
     snapshots and log files
-  - **$ETCD_CONFIG**: [_"/config/etcd.conf"_] Location of the configuration
-    file.
   - **$ETCD_NAME**: [_container_id_] Name for this etcd node.
 
 ## Radial
