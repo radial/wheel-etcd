@@ -2,8 +2,8 @@
 set -e
 
 # Tunable settings
+RESET_DATA_ON_RESTART=${RESET_DATA_ON_RESTART:-"False"}
 export ETCD_DATA_DIR=${ETCD_DATA_DIR:-/data/backup}
-export ETCD_CONFIG=${ETCD_CONFIG:-/config/etcd.conf}
 export ETCD_NAME=${ETCD_NAME:-${HOSTNAME}}
 
 # Misc settings
@@ -18,6 +18,10 @@ if [ ! -e /tmp/etcd_first_run ]; then
     touch /tmp/etcd_first_run
 else
     restart_message
+    if [ $RESET_DATA_ON_RESTART = "True" ]; then
+        rm -rf $ETCD_DATA_DIR &&\
+            echo "All etcd backup data has been deleted."
+    fi
 fi
 
 exec etcd

@@ -32,6 +32,9 @@ displaying default values specific to Radial.
   - **$ETCD_DATA_DIR**: [_"/data/backup"_] Location to store etcd backup
     snapshots and log files
   - **$ETCD_NAME**: [_container_id_] Name for this etcd node.
+  - **$RESET_DATA_ON_RESTART**: [_"False"_] Whether to delete the snapshot and
+    log data when the container is restarted. This is helpful during testing and
+    when using the container as a discovery service.
 
 ## Radial
 
